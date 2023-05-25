@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>illdy-slider</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .banner{
+            width: 100%;
+            height: 100vh;
+            background-image: url(images/front-page-counter.jpg);
+            text-align: center;
+            padding: 1px 14%;
+            box-sizing: border-box;
+        }
+        .banner h1{
+            margin-top: 50px;
+            color: white;
+            font-size: 38px;
+            letter-spacing: 1px;
+        }
+        .slider{
+            width: 100%;
+            height: 70%;
+            /* border: 1px solid red; */
+            overflow: hidden;
+        }
+        .slide1{
+            width:300%;
+            height: 100%;
+            /* background-color: blue; */
+            /* animation: move 10s linear infinite; */
+        }
+        @keyframes move{
+            0%{
+                margin-left: 0%;
+            }
+            33.3%{
+                margin-left: -100%;
+            }
+            /* 43.3%{
+                margin-left: -100%;
+            } */
+            66.6%{
+                margin-left: -200%;
+            }
+            /* 76.6%{
+                margin-left: -200%;
+            } */
+            100%{
+                margin-left: -300px;
+            }
+        }
+        .slide{
+            width:calc(33.3% - 20px);
+            height: 100%;
+            /* background-color: aqua; */
+            padding: 1px;
+            /* box-sizing: border-box; */
+            float: left;
+            margin-left: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        #btn1{
+            position: absolute;
+            top: 95%;
+            left: 47%;
+            /* z-index: 10; */
+            background-color: white;
+        }
+        .circle1:hover{
+            background-color: transparent;
+        }
+        #btn2{
+            position: absolute;
+            top: 95%;
+            left: 49%;
+            /* z-index: 10; */
+        }
+        #btn3{
+            position: absolute;
+            top: 95%;
+            left: 51%;
+            /* z-index: 10; */
+        }
+        #btn1:checked ~ .slide1{
+            margin-left: 0%;
+            transition:all 0.3s linear;
+        }
+        #btn2:checked ~ .slide1{
+            margin-left: -100%;
+            transition:all 0.2s linear;
+        }
+        #btn3:checked ~ .slide1{
+            margin-left: -200%;
+            transition:all 0.2s linear;
+        }
+        .img-div{
+            width: 128px;
+            height: 128px;
+            /* border: 1px solid; */
+            margin: auto;
+            border-radius: 100px;
+            margin-top: 15px;
+        }
+        .img-div img{
+            border-radius: 100px;
+        }
+        .purple{
+            width: 100%;
+            height: 150px;
+            background-color: purple;
+            margin: auto;
+            margin-top:40px;
+            padding: 1px 30px;
+            box-sizing: border-box;
+        }
+        .purple p{
+            font-size: 16px;
+            color: white;
+            line-height: 25px;
+            margin-top: 50px;
+        }
+        .mike{
+            font-size: 25px;
+            margin-top:70px;
+            color: white;
+        }
+        .circle1{
+            width: 12px;
+            height:11px;
+            background-color: white;
+            border: 1px solid white;
+            position: absolute;
+            top: 95.4%;
+            left: 47.4%;
+            border-radius: 30px;
+        }
+        #btn1:checked + .circle1{
+            background-color: yellow;
+        }
+        .circle2{
+            width: 12px;
+            height:11px;
+            background-color: white;
+            border: 1px solid white;
+            position: absolute;
+            top: 95.4%;
+            left: 49.4%;
+            border-radius: 30px;
+        }
+        #btn2:checked + .circle2{
+            background-color: yellow;
+        }
+        .circle2:hover{
+            background-color: transparent;
+        }
+        .circle3{
+            width: 12px;
+            height:11px;
+            background-color: white;
+            border: 1px solid white;
+            position: absolute;
+            top: 95.4%;
+            left: 51.4%;
+            border-radius: 30px;
+        }
+        #btn3:checked + .circle3{
+            background-color: yellow;
+        }
+        .circle3:hover{
+            background-color: transparent;
+        }
+        input{
+            display: none;
+        }
+        .nok-div{
+            width: 30px;
+            height: 30px;
+            background-color: purple;
+            transform: rotate(45deg);
+            margin: auto;
+            margin-top: -20px;
+            border-top-left-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1>Testimonials</h1>
+
+            
+            <div class="slider">
+                <input type="radio" name="btn" id="btn1" checked>
+                <label for="btn1" class="circle1"></label>
+                <input type="radio" name="btn" id="btn2">
+                <label for="btn2" class="circle2"></label>
+                <input type="radio" name="btn" id="btn3">
+                <label for="btn3" class="circle3"></label>
+
+
+
+
+                <div class="slide1">
+
+                    <div class="slide">
+        
+            <div class="img-div">
+                <img src="images/front-page-testimonial-4.jpg" alt="">
+            </div>
+            <div class="purple">
+                <!-- <p>"Awesome theme with great design and awesome support. If you don,t know how to code your own wordpress theme,but you still want a good-looking website for your business,Illdy might be exactly what your need. It is a s"</p> -->
+                <p>Awesome theme with great design and awesome&nbsp;support. If you don’t know how to code your own WordPress theme, but you still want a good-looking website for your business, Illdy might be exactly what you need. It is a slick theme with a lot of of features to choose from.</p>
+                <h3 class="mike">Mike Muller</h3>
+            </div>
+            <div class="nok-div"></div>
+        </div>
+
+
+
+
+        <div class="slide">
+            <div class="img-div">
+                <img src="https://149842022.v2.pressablecdn.com/wp-content/uploads/sites/58/2016/02/hombre-joven-cara-alegre-estudiante-127x127.jpg" alt="">
+            </div>
+            <div class="purple">
+                <!-- <p>"Awesome theme with great design and awesome support. If you don,t know how to code your own wordpress theme,but you still want a good-looking website for your business,Illdy might be exactly what your need. It is a s"</p> -->
+                <p>Awesome theme with great design and awesome&nbsp;support. If you don’t know how to code your own WordPress theme, but you still want a good-looking website for your business, Illdy might be exactly what you need. It is a slick theme with a lot of of features to choose from.</p>
+                <h3 class="mike">John Doe</h3>
+            </div>
+            <div class="nok-div"></div>
+
+        </div>
+
+
+
+
+        <div class="slide">
+            <div class="img-div">
+                <img src="https://149842022.v2.pressablecdn.com/wp-content/uploads/sites/58/2016/02/redhead-1123645_960_720-1-127x127.jpg" alt="">
+            </div>
+            <div class="purple">
+                <!-- <p>"Awesome theme with great design and awesome support. If you don,t know how to code your own wordpress theme,but you still want a good-looking website for your business,Illdy might be exactly what your need. It is a s"</p> -->
+                <p>Awesome theme with great design and awesome&nbsp;support. If you don’t know how to code your own WordPress theme, but you still want a good-looking website for your business, Illdy might be exactly what you need. It is a slick theme with a lot of of features to choose from.</p>
+                <h3 class="mike">Jane Smith</h3>
+            </div>
+            <div class="nok-div"></div>
+        </div>
+    </div>
+
+        </div>
+
+
+        </div>
+    </div>
+    
+</body>
+</html>
